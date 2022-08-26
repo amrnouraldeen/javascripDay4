@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" style="margin-bottom: 200px">
+<head>
+  <meta charset="UTF-8">
+  <title>ITI- js</title>
+  
+</head>
+<body>
+
+  <img src="./1.jpg" id="imgId" width="250" height="250" onmouseover="changeDynamicImage()"
+       onmouseout="stopImageGallery()" alt="slider image">
+
+
+  <div style="display: block; margin-top: 50px">
+    <button onclick="changeDynamicImage()">Start</button>
+    <button onclick="stopImageGallery()">Stop</button>
+    <button onclick="changeImage()">next</button>
+    <button onclick="changeImagePrevious()">previous</button>
+  </div>
+
+  <hr/>
+
+ 
+
+  <script>
+      let counter = 0;
+      let timeOfInterval;
+      const ourImages = [];
+      ourImages[0] = "./1.jpg";
+      ourImages[1] = "./2.jpg";
+      ourImages[2] = "./3.jpg";
+      ourImages[3] = "./4.jpg";
+
+      function changeImage() {
+
+        if (counter < 4) {
+              document.getElementById("imgId").src = ourImages[counter++]
+          } else {
+              counter = 0;
+          }
+      }
+
+      function changeImagePrevious() {
+
+        if (counter > 1) {
+              document.getElementById("imgId").src = ourImages[counter--]
+          } else {
+              counter = 3;
+          }
+      }
+
+      function changeDynamicImage() {
+          timeOfInterval = setInterval(changeImage, 500);
+      }
+
+      function stopImageGallery() {
+          clearInterval(timeOfInterval);
+      }
+
+  </script>
+
+
+</div>
+<script src="js/main.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div>
+  <form method="post" action="./thankyou.html">
+    <div>
+      <label for="fullName">Full Name : </label>
+      <input id="fullName" type="text" name="fullName" value="" required>
+      <span id="nameValidation" style="color:red;display: none">name invalid</span>
+    </div> <br> -->
+
+
+
+
+    <!-- <div>
+      <label class="form-label" for="email">Email : </label>
+      <input class="form-control border-blue" id="email" type="email" name="email" value="" required>
+    </div> <br> -->
+
+
+
+
+    <!-- <div>
+      <label class="form-label" for="city">City : </label>
+      <select  id="city" name="city" required>
+        <option>Cairo</option>
+        <option>Sohag</option>
+        <option>quna</option>
+        <option>Alx</option>
+      </select> <br> <br>
+    </div> -->
+
+
+
+    <!-- <div>
+      <label for="password">Password : </label>
+      <input id="password" type="password" name="password" required>
+      <span id="passwordValidation" style="color:red;display: none">password invalid</span>
+    </div> <br> -->
+
+
+
+    <!-- <div>
+      <label  for="repeatPassword">Repeat Password : </label>
+      <input  id="repeatPassword" type="password" name="repeatPassword" value="" required>
+      <span id="passwordRepeatValidation" style="color:red;display: none">password confirmed invalid</span>
+    </div> <br>
+
+    <div>
+      <input class="form-check-input" id="terms" type="checkbox" name="terms" value="" required>
+      <label class="form-label" for="terms">I accept the terms and conditions</label>
+    </div>
+
+    <button type="submit" >Register</button>
+    
+   
+  </div>
+
+  </form>
+  <hr/> -->
+
